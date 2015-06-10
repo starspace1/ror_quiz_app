@@ -1,7 +1,7 @@
 <h1>Manufacturers</h1>
 
 <ul>
-  <% @manufacturers.each do |m| %>
-    <li><%= link_to m.name, manufacturer_path(m) %></li>
+  <% @manufacturers.each do |manufacturer| %>
+    <li><%= link_to manufacturer.name, manufacturer_path(manufacturer) %></li>
   <% end %>
 </ul>
