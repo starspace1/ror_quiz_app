@@ -1,13 +1,8 @@
-== README
-
-* fork this app.
-* clone your fork.
-* change the README.rdoc to README.md
-* replace the contents with
 
 # ROR Quiz App
 
 A joint production of
+
 
 * Brian Gates
 * Devan Kestel
