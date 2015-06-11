@@ -9,4 +9,6 @@
   <%= f.submit 'Edit my data' %>
 <% end %>
 
+<p> <%= button_to "Delete Manufacturer", manufacturer_path, :class => "button", :method => :delete  %> </p>
+
 <p><%= link_to "Home", root_path %></p>

@@ -16,7 +16,14 @@ class ManufacturersController < ApplicationController
     @manufacturer = Manufacturer.find(params[:id])
     @manufacturer.update(params.require(:manufacturer).permit(:name, :domestic))
     flash[:notice] = "Manufacturer successfully updated!"
-    redirect_to manufacturer_path
+    redirect_to manufacturer_path(@manufacturer)
+  end
+
+  def destroy
+    @manufacturer = Manufacturer.find(params[:id])
+    @manufacturer.destroy
+    redirect_to root_path
+
   end
 
 end
