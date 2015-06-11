@@ -1,0 +1,12 @@
+<h1>Edit <%= @manufacturer.name %></h1>
+  <%= form_for @manufacturer do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.radio_button :domestic, true %> 
+  <%= f.label :domestic, 'Domestic', :value => 'true' %>
+  <%= f.radio_button :domestic, false %> 
+  <%= f.label :foreign, 'Foreign', :value => 'false' %>
+  <%= f.submit 'Edit my data' %>
+<% end %>
+
+<p><%= link_to "Home", root_path %></p>
