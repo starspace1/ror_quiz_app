@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  mpg: 1
+  price: 1
+  manufacturer_id: 1
+
+two:
+  name: MyString
+  mpg: 1
+  price: 1
+  manufacturer_id: 1

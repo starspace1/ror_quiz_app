@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609133522) do
+ActiveRecord::Schema.define(version: 20150615154618) do
+
+  create_table "car_models", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "mpg"
+    t.integer  "price"
+    t.integer  "manufacturer_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "car_models", ["manufacturer_id"], name: "index_car_models_on_manufacturer_id"
 
   create_table "manufacturers", force: :cascade do |t|
     t.string   "name"
