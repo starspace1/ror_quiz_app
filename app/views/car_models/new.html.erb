@@ -1,0 +1,14 @@
+<h1>Add a Model</h1>
+
+<%= form_for [@manufacturer, @car_model] do |c| %>
+  <%= c.label :name %>
+  <%= c.text_field :name %>
+  <%= c.label :mpg %>
+  <%= c.text_field :mpg %>
+  <%= c.label :price %>
+  <%= c.text_field :price %>
+  <%= c.submit %>
+<% end %>
+
+<p><%= link_to "Back to #{@manufacturer.name}", manufacturer_path(@manufacturer) %></p>
+<p><%= link_to "All Manufacturers", root_path %></p>

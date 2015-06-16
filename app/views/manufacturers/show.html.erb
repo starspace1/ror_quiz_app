@@ -2,6 +2,17 @@
 
 <p> <%= @manufacturer.name %> is a <% if @manufacturer.domestic %> domestic <% else %> foreign <% end %> car manufacturer.</p>
 
+<% if @manufacturer.car_models %>
+  <h2> Models </h2>
+  <ul>
+    <% @manufacturer.car_models.each do |model| %>
+      <li><%= model.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<p><%= link_to "Add a car model", new_manufacturer_car_model_path(@manufacturer) %></p>
+
 <p><%= link_to "Edit", edit_manufacturer_path(@manufacturer) %></p>
 
 <p><%= link_to "Home", root_path %></p>
