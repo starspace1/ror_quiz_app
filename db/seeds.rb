@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-%(Buick Cadillac Chevrolet Chrysler Dodge Ford Lincoln Oldsmobile Pontiac Saturn).each do |name|
+%w(Buick Cadillac Chevrolet Chrysler Dodge Ford Lincoln Oldsmobile Pontiac Saturn).each do |name|
   Manufacturer.create(name: name, domestic: true)
 end
 
