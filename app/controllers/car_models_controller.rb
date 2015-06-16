@@ -11,7 +11,7 @@ class CarModelsController < ApplicationController
       flash[:notice] = "Car Model successfully created!"
       redirect_to manufacturer_path(@manufacturer)
     else
-      flash[":alert-danger"] = "Car Model not created. Make sure that you have given a unique name."
+      flash[":alert"] = "Car Model not created. #{@car_model.errors.messages[:name][0]}"
       render :new
     end
   end
