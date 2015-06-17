@@ -10,7 +10,7 @@ class CarModelsController < ApplicationController
 
     @car_model = @manufacturer.car_models.create(car_model_params)
     if @car_model.valid?
-      redirect_to manufacturer_car_model_path(@manufacturer, @car_model)
+      redirect_to manufacturer_car_model_path(@manufacturer, @car_model), notice: "#{@car_model.name} has been created"
     else
       render 'new'
     end
