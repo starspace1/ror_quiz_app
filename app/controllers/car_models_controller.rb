@@ -8,7 +8,8 @@ class CarModelsController < ApplicationController
   def create
     @manufacturer = Manufacturer.find(params[:manufacturer_id])
 
-    if @car_model = @manufacturer.car_models.create(car_model_params)
+    @car_model = @manufacturer.car_models.create(car_model_params)
+    if @car_model.valid?
       redirect_to manufacturer_car_model_path(@manufacturer, @car_model)
     else
       render 'new'
