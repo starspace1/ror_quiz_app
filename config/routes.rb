@@ -1,11 +1,44 @@
 Rails.application.routes.draw do
 
+  get 'factories/new'
+
+  get 'factories/show'
+
   root 'manufacturers#index'
 
   resources :manufacturers do
     resources :car_models
+    resources :factories
   end
 
+#                      Prefix Verb   URI Pattern                                                   Controller#Action
+#               factories_new GET    /factories/new(.:format)                                      factories#new
+#              factories_show GET    /factories/show(.:format)                                     factories#show
+#                        root GET    /                                                             manufacturers#index
+#     manufacturer_car_models GET    /manufacturers/:manufacturer_id/car_models(.:format)          car_models#index
+#                             POST   /manufacturers/:manufacturer_id/car_models(.:format)          car_models#create
+#  new_manufacturer_car_model GET    /manufacturers/:manufacturer_id/car_models/new(.:format)      car_models#new
+# edit_manufacturer_car_model GET    /manufacturers/:manufacturer_id/car_models/:id/edit(.:format) car_models#edit
+#      manufacturer_car_model GET    /manufacturers/:manufacturer_id/car_models/:id(.:format)      car_models#show
+#                             PATCH  /manufacturers/:manufacturer_id/car_models/:id(.:format)      car_models#update
+#                             PUT    /manufacturers/:manufacturer_id/car_models/:id(.:format)      car_models#update
+#                             DELETE /manufacturers/:manufacturer_id/car_models/:id(.:format)      car_models#destroy
+#      manufacturer_factories GET    /manufacturers/:manufacturer_id/factories(.:format)           factories#index
+#                             POST   /manufacturers/:manufacturer_id/factories(.:format)           factories#create
+#    new_manufacturer_factory GET    /manufacturers/:manufacturer_id/factories/new(.:format)       factories#new
+#   edit_manufacturer_factory GET    /manufacturers/:manufacturer_id/factories/:id/edit(.:format)  factories#edit
+#        manufacturer_factory GET    /manufacturers/:manufacturer_id/factories/:id(.:format)       factories#show
+#                             PATCH  /manufacturers/:manufacturer_id/factories/:id(.:format)       factories#update
+#                             PUT    /manufacturers/:manufacturer_id/factories/:id(.:format)       factories#update
+#                             DELETE /manufacturers/:manufacturer_id/factories/:id(.:format)       factories#destroy
+#               manufacturers GET    /manufacturers(.:format)                                      manufacturers#index
+#                             POST   /manufacturers(.:format)                                      manufacturers#create
+#            new_manufacturer GET    /manufacturers/new(.:format)                                  manufacturers#new
+#           edit_manufacturer GET    /manufacturers/:id/edit(.:format)                             manufacturers#edit
+#                manufacturer GET    /manufacturers/:id(.:format)                                  manufacturers#show
+#                             PATCH  /manufacturers/:id(.:format)                                  manufacturers#update
+#                             PUT    /manufacturers/:id(.:format)                                  manufacturers#update
+#                             DELETE /manufacturers/:id(.:format)                                  manufacturers#destroy
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
