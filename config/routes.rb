@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root 'manufacturers#index'
 
-  resources :manufacturers
+  resources :manufacturers do
+    resources :car_models
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
