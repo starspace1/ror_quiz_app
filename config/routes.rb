@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'manufacturers#index'
 
   resources :manufacturers do
+
     resources :factories
     resources :car_models
   end

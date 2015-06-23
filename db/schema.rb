@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20150618133951) do
   end
 
   create_table "car_models_factories", id: false, force: :cascade do |t|
-    t.integer "car_models_id"
-    t.integer "factories_id"
+    t.integer "car_model_id"
+    t.integer "factory_id"
   end
 
-  add_index "car_models_factories", ["car_models_id"], name: "index_car_models_factories_on_car_models_id"
-  add_index "car_models_factories", ["factories_id"], name: "index_car_models_factories_on_factories_id"
+  add_index "car_models_factories", ["car_model_id"], name: "index_car_models_factories_on_car_model_id"
+  add_index "car_models_factories", ["factory_id"], name: "index_car_models_factories_on_factory_id"
 
   create_table "factories", force: :cascade do |t|
     t.string   "city"
