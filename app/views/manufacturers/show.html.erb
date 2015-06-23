@@ -1,7 +1,31 @@
 <h1> <%= @manufacturer.name %> </h1>
 
 <p> <%= @manufacturer.name %> is a <% if @manufacturer.domestic %> domestic <% else %> foreign <% end %> car manufacturer.</p>
+  <ul>
+    <% @manufacturer.car_models.each do |car| %>
+      <li><%= car.name %></li>
+    <% end %>
+  </ul>
+
+  <table>
+    <tr>
+      <th>City</th>
+      <th>State</th>
+      <th>Union?</th>
+    </tr>
+    <% @manufacturer.factories.each do |fac| %>
+      <tr>
+        <td><%= fac.city  %></td>
+        <td><%= fac.state %></td>
+        <td><%= fac.unionized %></td>
+      </tr>
+    <% end %>
+  </table>
+
 
 <p><%= link_to "Edit", edit_manufacturer_path(@manufacturer) %></p>
+
+<p><%= link_to "New Car Model", new_manufacturer_car_model_path(@manufacturer) %></p>
+<p><%= link_to "New Factory", new_manufacturer_factory_path(@manufacturer) %></p>
 
 <p><%= link_to "Home", root_path %></p>
