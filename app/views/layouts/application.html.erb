@@ -13,6 +13,13 @@
     </p>
   <% end %>
 
+<% if session[:user] %>
+  <p><%= "Currently logged in as #{session[:user]}." %></p>
+  <p><%= link_to "Log out", logout_path, method: :delete %></p>
+<% else %>
+  <p><%= link_to "Log in", login_path %></p>
+<% end %>
+
 <%= yield %>
 
 </body>
