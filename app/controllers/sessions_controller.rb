@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:email])
     if user
-      if user.password == params[:password]
+      if user.authenticate(params[:password])
         session[:user] = params[:email] # I still don't really understand the session[] magic
         redirect_to root_path
       end
