@@ -1,5 +1,7 @@
 class ManufacturersController < ApplicationController
 
+  skip_before_action :require_login, only: [:index, :show]
+
   def index
     @manufacturers = Manufacturer.all
   end
