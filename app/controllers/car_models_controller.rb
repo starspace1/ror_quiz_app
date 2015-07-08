@@ -1,4 +1,5 @@
 class CarModelsController < ApplicationController
+  before_action :require_login, only: [:new, :create]
 
   def new
     @manufacturer = Manufacturer.find(params[:manufacturer_id])

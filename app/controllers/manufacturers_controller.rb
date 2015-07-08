@@ -1,4 +1,5 @@
 class ManufacturersController < ApplicationController
+  before_action :require_login, only: [:edit, :update, :destroy]
 
   def index
     @manufacturers = Manufacturer.all
